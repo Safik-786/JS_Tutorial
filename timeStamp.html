@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Stamp</title>
+</head>
+<body>
+    <p> Focus this iFrame and press any keyboard Key to get current time stamp for the key press event</p>
+    <p>Timestamp : <span id="time"></span></p>
+    <!-- timestamp states that time require to event fires
+    means kitne time me event fire hota hai -->
+</body>
+<script>
+  
+    // document.body.addEventListener('keypress',function(event){
+    //     const time = document.getElementById('time')
+    //     time.innerHTML= event.timeStamp;
+    // })
+
+
+    // or we can use function like this =>
+
+    function getTime(event) {
+        const time = document.getElementById('time')
+        time.firstChild.nodeValue= event.timeStamp;   
+    }
+    document.body.addEventListener('keypress',getTime)
+</script>
+</html>

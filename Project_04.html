@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess a number</title>
+    <style>
+        .container{
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container2 {
+            width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid springgreen;
+            border-radius: 10px;
+            background-color: springgreen;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #sbmt {
+            background-color: black;
+            color: white;
+            padding: 3px 1px;
+            border-radius: 5px;
+        }
+        #guessfield{
+            height:1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <div class="container">
+        <div class="container2">
+            <p><strong>Number Guessing Game</strong></p>
+            <h2>Guess a Number</h2>
+            <form action="">
+                <input  type="text" id="guessfield">
+                <br><br>
+                <input id="sbmt"  type="submit"  value="Submit Guess">
+            </form>
+
+            <div class="resultParas">
+                <p>Previous Guesses :<span class="guesses"></span></p>
+                <p>Guesses Remaining :<span class="lastresult">10</span></p>
+                <p class="lowOrHigh "></p>
+            </div>
+
+        </div>
+    </div>
+    <script src="Project_04.js"></script>
+</body>
+
+</html>

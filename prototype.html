@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            name: "safik",
+            language : "javaScript", 
+            // run : ()=>{
+            //     alert('run')
+            // }
+        }
+        console.log(a);
+        let p ={
+            run :()=>{
+                alert('runnn.........');
+            }
+        }
+        //    setting of prototype object p with the object ref a
+        a.__proto__ = p;
+        a.run()     /* this executing code first check the object a (ask to obj: do you have any run method )
+                    if yes then execute run method . if run method is not avail in object 'a' then it will check
+                     in prototype . if run method is available in prototype , it will also execute           */
+
+        // prototype ka bhi prototype ho sakta hai
+        p.__proto__ ={
+            name2: "tiger"
+        }
+        console.log(a.name2);
+
+        /*      1st check in 'a' object , then check in prototype of  , then check in prototype of p
+                
+        */
+
+
+    </script>
+</body>
+</html>

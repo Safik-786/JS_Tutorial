@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            height: 95vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid salmon;
+            width: 300px;
+            height: 250px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+        #field{
+            width: 200px;
+            height: 100px;
+            border: 1px solid salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form method="">
+            UserId :<input type="number" id="userId" placeholder="userId">
+            Title :<input type="text" id="title" placeholder="title">
+            About :<input type="text" id="about" placeholder="body">
+            <input type="submit" value="Add TODO">
+        </form>
+        <div id="field"></div>
+    </div>
+    <script>  // goto json place holder website  =>resource=>Routes     => goto "guide"
+
+        //  1.   getting a single resource from API
+
+
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+            
+
+        //  2.  getting all resource from the API
+
+
+        // console.log("getting all resources");
+        // fetch('https://jsonplaceholder.typicode.com/posts')
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+
+        // Creating a Resource in this api format (PROJECT)
+
+        // var form = document.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+        //     var userId = Number.parseInt(document.getElementById('userId').value)
+        //     var name = document.getElementById('title').value
+        //     var About = document.getElementById('about').value
+
+        //     //  fetch post Request
+        //     fetch('https://jsonplaceholder.typicode.com/posts', {
+        //         method: 'POST',
+        //         body: JSON.stringify({           // this method use to convert from object type to String(JSON)
+        //             title: name,
+        //             userId: userId,          //   sequence doesnot matter
+        //             body: About,
+        //         }),
+        //         headers: {
+        //             'Content-type': "application/json; charset=UTF-8",
+        //         },
+        //     })
+        //         .then((response) => {
+        //             return response.json()
+        //         }).then((data) => {
+        //             console.log(data);
+        //         })
+        // })
+
+
+
+
+        // UPDATING RESOURSE
+
+        
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        //     method: 'PUT',
+        //     body: JSON.stringify({
+        //         id: 1,
+        //         title: 'foo',
+        //         body: 'bar',
+        //         userId: 1,
+        //     }),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+
+
+        // PATCHING RESOURCE
+
+
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        //     method: 'PATCH',
+        //     body: JSON.stringify({
+        //         title: 'foo',
+        //     }),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

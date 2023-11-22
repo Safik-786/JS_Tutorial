@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <h2>chai or code</h2>
+    <button id="btn"> click me</button>
+    <script>
+        setTimeout (function(){         //way 1
+            console.log("safix");
+        } ,2000)
+
+
+        const say = function(){
+            console.log("Rahul");
+        }
+        // setTimeout(say,2000);
+
+        const changeText= function(){
+            document.querySelector('h2').innerHTML = "Best js Series"
+        }
+        // setTimeout(changeText,2000)
+        const changeTime=setTimeout(changeText,2000)
+        document.querySelector('#btn').addEventListener('click',function() {
+            // alert("hii ! welcome")
+            clearTimeout(changeTime)
+            console.log("stopped");
+        })
+        let timerid= setTimeout(()=>alert("never"),1000)
+        clearTimeout(timerid)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The Window Object</h1>
+    <h2>The localStorage Property</h2>
+
+    <p><button type="button" id="btn">Click me!</button></p>
+    <p><button type="button" id="reset">Reset!</button></p>
+
+    <p>Number of clicks:</p>
+    <p id="demo"></p>
+
+    <p>Click the button to see the counter increase.</p>
+    <p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+    <script>
+        let key = prompt("Enter Key ")
+        let value = prompt("Enter value ")
+        localStorage.setItem(key, value)
+        const val = window.localStorage.getItem(key)
+        console.log(val);
+        if(key=='red'|| key=='blue')
+        {
+            localStorage.removeItem(key);
+        }
+
+            // Small Project
+
+        const btn =document.getElementById('btn')
+        btn.addEventListener('click',(e)=>{
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount) + 1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("demo").innerHTML = localStorage.clickcount;
+            
+        })
+        document.getElementById('reset').addEventListener('click',(e)=>{
+            localStorage.clear();
+            document.getElementById("demo").innerHTML =0;
+
+        })
+        
+    </script>
+
+</body>
+
+</html>

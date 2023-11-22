@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaining Concept in promise</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(function () {
+                resolve(56)
+            },2000)  
+        })
+        p1.then(function(value){
+            console.log(value);
+            let p2= new Promise((resolve, reject) => {
+                resolve(',i am promise 2')
+            })
+            return p2            // this statement is important
+
+/*          return new Promise((resolve, reject) => {
+                resolve(',i am promise 2')                      // we can also return like this
+            })
+*/
+
+        }).then(function(value){
+            console.log("we are done", value);
+            return 2;
+        }).then(function(value){
+            console.log(value);
+            return " bye guys"
+        }).then(function (value) {
+            console.log(value);
+        })
+    </script>
+</body>
+</html>

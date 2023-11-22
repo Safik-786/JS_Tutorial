@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        .container {
+            display: grid;          
+        }
+        .child{
+            margin: auto;
+            border: 2px solid black;
+            padding: 30px 30px;
+            background-color: antiquewhite;
+        }
+        #results{
+            border: 1px solid black;
+            height: 30px;
+            background-color: white;
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;    
+            /* justify-content keep the text to the middle horozontally */
+            align-items: center;
+            /* align-items keep the text to the middle horozontally */
+
+        }
+        #btn{
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+        button{
+            background-color: darkslategray;
+            color: whitesmoke;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="child">
+            <h1>BMI Calculator</h1>
+            <form action="">
+                Height : <input type="text" placeholder="Enter number in cm" id="height">
+                <br> <br> <br>
+                Weight : <input type="text" placeholder="Enter number in cm" id="weight">
+                <br><br>
+                <div id="btn">
+                    <button>Calculate</button>
+                </div>
+                <div id="results"></div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <script src="Project_02.js"></script>
+</body>
+
+</html>

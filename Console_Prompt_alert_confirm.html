@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+</head>
+<body>
+    <script>
+        console.time("forloop")
+        for(let i= 0; i<5;i++){
+            console.log("hello  ")
+        }
+        console.timeEnd("forloop")
+
+        console.time("whileloop")
+        let i=0
+        while(i<5){
+            console.log("hii  ")
+            i++
+        }
+        console.timeEnd("whileloop")
+
+
+       alert("hello world")
+       let a =prompt("enter your choice :")
+       document.write("hello  ", a)
+
+       let write= confirm("are you ready for pair")
+
+       if(write){
+        document.write("  yes i am ready")
+       }else{
+        document.write(" i am not ready yet")
+       }
+
+
+    </script>
+</body>
+</html>

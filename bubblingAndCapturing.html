@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubbling and capturing</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+        
+        }
+        .box{
+            border: 1px solid black;
+            padding: 40px 60px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        #box1{
+            background-color: blue;
+            color: white;
+        }
+        #box2{
+            background-color: blueviolet;
+            color: white;
+        }
+        #box3{
+            background-color: green;
+            color: white;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- nested tag -->
+    <div class="container">
+        <div  class="box" id="box1" data-name=" Grand Parent"> Grand Parent
+            <div class="box" id="box2" data-name="  Parent "> Parent
+                <div class="box" id="box3" data-name=" child ">  Child
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // BUBBLLING  PHASE
+        // document.getElementById('box1').addEventListener('click',function(){
+        //     console.log("grand parent");
+        // },false);
+        // document.getElementById('box2').addEventListener('click',function(){
+        //     console.log(" parent");
+        // },false);
+        // document.getElementById('box3').addEventListener('click',function(){
+        //     console.log("child ");
+        // },false);
+
+        //  CAPTURING / trickling  PHASE
+        // document.getElementById('box2').addEventListener('click',function(){
+        //     console.log(" parent");
+        // },true);
+        // document.getElementById('box3').addEventListener('click',function(){
+        //     console.log("child ");
+        // },true);
+        // document.getElementById('box1').addEventListener('click',function(){
+        //     console.log("grand parent");
+        // },true);
+
+        // DIFFERENCE BETWEEN target AND currentTarget
+
+        
+        document.getElementById('box1').addEventListener('click',function(e){
+
+            console.log(e.target.dataset.name);
+            console.log(e.currentTarget.dataset.name);
+            // console.log("target :",e.target.id);
+            // console.log("currentTarget :",e.currentTarget.id);
+            // e.stopPropagation()
+        },true);
+        document.getElementById('box2').addEventListener('click',function(e){
+
+            console.log(e.target.dataset.name);
+            console.log(e.currentTarget.dataset.name);
+            // console.log("target :",e.target.id);
+            // console.log("currentTarget :",e.currentTarget.id);
+            // e.stopPropagation()
+            
+        },true);
+        document.getElementById('box3').addEventListener('click',function(e){
+
+            console.log(e.target.dataset.name);
+            console.log(e.currentTarget.dataset.name);
+            // console.log("target :",e.target.id);
+            // console.log("currentTarget :",e.currentTarget.id);
+            // e.stopPropagation()
+            
+        },true);
+
+
+ 
+    </script>
+</body>
+
+</html>

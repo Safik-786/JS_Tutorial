@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos disappearing by clicking</title>
+    <style>
+    
+        .box{
+            display: flex;
+            justify-content: center;
+        }
+        li{
+            width: 150px;
+            height: 150px;
+            list-style-type: none;
+            padding: 5px 5px;
+            float: left;
+            /* border-radius: 50px; */
+        }
+        ul{
+            text-decoration: none;
+        }
+        img{
+            border: 2px solid black;
+            border-radius: 20px;
+            width:150px;
+             height:150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul id="images">
+            <li id="img1"><img  src="image/IMG_20200608_130852.JPG" alt="hello"></li>
+            <li id="img2"><img  src="image/IMG_20220525_084914.jpg" alt="hello"></li>
+            <li id="img3"><img  src="image/IMG_20221224_095220.jpg" alt="hello"></li>
+            <li id="img4"><img  src="image/IMG_20230219_134550.jpg" alt="hello"></li>
+            <li id="img5"><img  src="image/IMG_20230321_100322.jpg" alt="hello"></li>
+        </ul>
+    </div>
+    <script>
+        const img=document.querySelector('#images')
+        // img.addEventListener('click', function(e){
+        //         let removeIt= e.target.parentNode;  // if we touch the image it will return the parent tag if img tag i.e li
+        //         removeIt.remove()                            // 1st way (  easy and best method  )
+        //         // removeIt.parentNode.removeChild(removeIt)    // 2nd way
+        //     })
+
+            // above program have bug issue => if we click on li it will remove all the ul , so we need to solve this
+
+            img.addEventListener('click', function(e){
+                if (e.target.tagName==="IMG") {
+
+                    let removeIt= e.target.parentNode; 
+                    removeIt.remove()                            
+                }
+            })
+
+            
+            
+            
+            
+            
+                    // MY CREATED CODE
+            // const img2=document.querySelectorAll('li')
+            // img2.forEach((name) =>{
+            //     name.addEventListener('click',function(e){
+            //         let removeIt = e.target
+            //         removeIt.remove()
+            //     })
+            // })
+            </script>
+</body>
+</html>

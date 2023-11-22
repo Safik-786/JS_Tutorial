@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+    <style>
+        ul{
+            list-style-type: none;
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(96, 91, 91);
+            color: white;
+        }
+        ul li{
+            padding: 5px 30px;
+        }
+        
+    </style>
+</head>
+<body>   <!-- only comment in first line gives the comment node -->
+    <nav>
+        <ul class="unorder">
+            <li>Home</li>
+            <li>About us</li>
+            <li>contact</li>
+            <li>setting</li>
+        </ul>
+    </nav>
+
+    <script>
+        const changeBgRed = ()=> {
+            document.body.firstElementChild.style.background = 'red';
+        }
+        changeBgRed()
+        let b = document.body
+        console.log('first child of body is ;', b.firstChild);      //it may be text ,comment
+        console.log('first Element child of body is :', b.firstElementChild);
+    </script>
+</body>
+</html>

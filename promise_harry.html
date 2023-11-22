@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log("good Morning");
+        let promise1 = new Promise((resolve, reject) => {
+            alert("hello i am an alert in new promise")
+            resolve(54)
+        })
+        promise1.then((value)=>{            //agar hum .then ke pehle promise name nahi lagainge to promise value nahi show karega
+            console.log(value);
+        })
+        
+        console.log(promise1);
+
+        console.log("hello one");
+        setTimeout(() => {
+            console.log("i am back in 2 second");
+        }, 5000);
+    </script>
+</body>
+</html>

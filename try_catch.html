@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try , catch , finally</title>
+</head>
+
+<body>
+    <script>
+        // console.log("I am gonn Hack your Faceb**k Account");
+        // setTimeout(()=>{
+        //     console.log("your id's data is start fetching......please wait..");
+        // },2000)
+        // setTimeout(()=>{
+        //     console.log("please wait.... Loading.........");
+        // },3000)
+        // try {
+        //     console.log(start);          //iske baad se execute hi nahi hoga
+
+        // } catch (error) {
+        //     console.log(error);
+        // }
+        // setTimeout(()=>{
+        //     console.log("your phone number is .... 91+9938399373");
+        // },4000)
+        // setTimeout(()=>{
+        //     console.log("Warning!!!!  your password is.......Loading.....");
+        // },5000)
+
+        console.log('hello 1');
+        console.log('hello 2');
+        try {
+            console.log(rahul);
+        } catch (error) {
+            console.log(error);
+        }
+        console.log('hello 3');
+        console.log('hello 4');
+        console.log('hello 5');
+        console.log("\n");
+        console.log("\n");
+
+
+        //   ======================================= Create Custom Error ===========================================
+        // try {
+        //     let age = prompt('Enter your Age')
+        //     age = Number.parseInt(age)
+        //     if (age >= 150) {
+        //         // throw new ErrorABC("invalid Age Error")          // this willl not give message inside("...")
+        //         throw new Error("invalid Age Error")
+        //     }
+        //     else {
+        //         document.write(`your age is ${age}`)
+        //     }
+
+        // } catch (error) {
+        //     console.log(error.name);
+        //     console.log(error.message);
+        //     console.log(error.stack);
+        // }
+
+
+        // =================================finally clause====================================
+        // try {
+        //     let a = 20
+        //     console.log(program);
+        //     console.log('program run successfully');
+
+
+        // } catch (error) {
+        //     console.log('this is the .......... error');
+        //     console.log(fuck);
+        // }
+        // finally {
+        //     console.log('this is finally block ex');
+        //     // finally can contain
+        //     /*      Close the file
+        //             Exit the looop
+        //             write the log file
+            
+        //             */
+        // }
+
+
+        const func = (() => {
+            try {
+                let a = 20
+                console.log('program run successfully');
+                return
+
+            } catch (error) {
+                console.log('this is the .......... error');
+                console.log(fuck);
+            }
+            finally {
+                console.log('this is finally block ex');
+                // finally can contain
+
+            }
+        })
+        func()  
+        // here we can observe that even we were return the program in try block but still finally block will execute
+
+
+
+    </script>
+</body>
+
+</html>

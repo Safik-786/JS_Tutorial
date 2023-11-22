@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>co-ordinate</title>
+    <style>
+        .container{
+            width: 400px;
+            height: 200px;
+            display: block;
+            margin: auto auto;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <p>Move your mouse to see the co-ordinates</p>
+    <p id="screen"></p>
+    <div class="container">
+        
+    </div>
+</body>
+<script>
+    let screenlog= document.querySelector("#screen")
+    let div = document.querySelector('.container')
+    document.addEventListener('mousemove', function(e) {   // coordinate return based upon the document
+        screenlog.innerHTML= `screen x/y :${e.screenX}px , ${e.screenY}px <br>
+                             client x/y :${e.clientX}px , ${e.clientY}px <br>
+                             page x/y :${e.pageX}px , ${e.pageY}px`
+    })
+    div.addEventListener('mousemove', function(e) {
+        div.innerHTML=`offset x/y : ${e.offsetX}px ,${e.offsetY}px`
+    })
+
+</script>
+</html>

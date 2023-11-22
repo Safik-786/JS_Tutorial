@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise API</title>
+</head>
+
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('1st value')
+                reject(new Error("Error"))
+            }, 1000);
+        })
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('2nd value')
+            }, 2000);
+        })
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('3rd value')
+            }, 3000);
+        })
+
+
+        p1.then((value) => {
+            console.log(value);
+        })
+        p2.then((value) => {
+            console.log(value);
+        })
+        p3.then((value) => {
+            console.log(value);
+        })
+        /* 
+        
+        1.> promise.all([p1,p2,p3]) =  This method wait for all the promises to resolve and finally return a array of their
+        result . if any 1 fails then it will give an error and all other error are ignored
+
+         
+        2.> promise.allsettled([]) = above method doesn't work if one promises doesn't work properly but this method will work
+         evev 1 or more method will not work . and it return(object) status:______   , value:______    format
+         
+        
+        3.> promise.race([])  =  it return that promises which will execute first  and  its result/ error become the outcome 
+         
+
+        4.> promise.any([]) = it wait for the first promises to be fulfilled(& not rejected if it is rejected then this method
+          willfind next executed promise which is resolved .) it will always return resolved promise. If all the promises are rejected
+          then it willl through "Aggregate Error" 
+
+
+        5.> Promise.resolve(value) = Make a resolved promise with a given value
+
+
+        6.>  Promise.reject(error) = Make a rejected promise with a given error
+          
+          */
+
+
+        // let promiseMethod = Promise.all([p1, p2, p3])
+        // let promiseMethod = Promise.allSettled([p1, p2, p3])
+        // let promiseMethod = Promise.race([p1, p2, p3])
+        //  let promiseMethod = Promise.any([p1, p2, p3])
+        //  let promiseMethod = Promise.resolve(6)
+        let promiseMethod = Promise.reject(new Error("Hey there ! ERROR"))
+        promiseMethod.then((value) => {
+            console.log("Promice-race =" + value);
+        })
+    </script>
+</body>
+
+</html>

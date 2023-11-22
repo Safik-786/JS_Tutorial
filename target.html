@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target </title>
+    <style>
+        .container{
+            width: 200px;
+            padding: 40px;
+            text-align: center;
+        
+            line-height: 20vh;
+            background-color:  blue;
+        }
+        #spn{
+            padding: 40px;
+            border: 2px solid salmon;
+            background-color: salmon;
+        }
+        #btn{
+            padding: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="spn">
+            <button class="button" id="btn"> click me </button>
+        </span>
+    </div>
+
+    <script>
+        const btn = document.querySelector('#btn')
+        const div = document.querySelector('.container')
+
+        btn.addEventListener('click', function (event) {
+            // console.log(event.target.className);
+            // console.log(event.target.id);
+            console.log(event.target);   //tagName === nodeName
+            console.log(event.currentTarget);
+        })
+
+        div.addEventListener('click' , function (event) {
+            // console.log("div is clicked");
+            // console.log(event.target.tagName);
+        })
+    </script>
+
+    
+</body>
+</html>

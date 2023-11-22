@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        .container{
+            height: 95vh;
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+        }
+        .box{
+            text-align: center;
+            height: 200px;
+            width: 200px;
+            border: 2px solid salmon;
+            line-height: 200px;
+            /* margin: auto; */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">box1</div>
+        <div class="box" id="box2">box2</div>
+        <div class="box" id="box3">box3</div>
+    </div>
+    <script>
+        document.getElementById('box1').addEventListener('click',function(e){
+            console.log(e);
+        },false)        // false is default sometimes application doesn't work if we don't use false, but output remain same
+        // document.querySelector('#box2').addEventListener('click',function (e2) {
+        //     console.log(e2);
+        // },false)
+    </script>
+
+
+<!-- CONCEPT TO BE LEARNED ON eventListener 
+     1.  type, timestamp, defaultPrevented
+     2.  target, toelement, srcElement, currentTarget
+     3.  client-x, client-y, screen-X, screen-Y
+     4.  altKey, ctrlKey, shiftKet, keyCode
+     5.  Event Propagation
+-->
+
+</body>
+</html>

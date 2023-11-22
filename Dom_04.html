@@ -1,0 +1,66 @@
+
+<!--  INSERT ELEMENT THROUGH FUNCTION -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- edit and remove element in Dom -->
+    <ul class="language">
+        <li>javaScript</li>
+    </ul>
+
+    <script>
+        function addLanguage(langName) {
+            const li = document.createElement('li');
+            li.innerHTML = `${langName}`
+            const append = document.querySelector('.language')
+            append.appendChild(li)
+            // document.querySelector('.language').appendChild(li)
+        }
+
+        /* disadvantages of this function is time complexity as it add element at the end it will
+     traverse the all list and at last position it will add the list. so we should optimize this problem*/
+
+        function addOptiLanguage(langname){  //recommended approach
+            const li = document.createElement('li');
+            const addTextNode= document.createTextNode(langname)    //text node approach
+            li.appendChild(addTextNode)
+            document.querySelector('.language').appendChild(li)
+        }
+        addLanguage('python')
+        addLanguage('java')
+        addOptiLanguage('ruby')
+        //          EDIT   --- replace 2nd lang with mojo
+        const secondLang = document.querySelector('li:nth-child(2)')
+
+        // secondLang.innerHTML= 'mojo'             // 1st approach
+
+
+        const newLi = document.createElement('li')
+        newLi.innerHTML= 'mojo'                     //2nd approach   i.e replacewith() method
+        secondLang.replaceWith(newLi)
+
+        //          EDIT   --- replace 1st lang with typescript
+        const firstLang = document.querySelector('li:nth-child(1)')
+        firstLang.outerHTML='<li> Type Script</li>' //3rd approach
+
+
+            // REMOVE
+        const lastLang = document.querySelector('li:last-child')
+        // lastLang.remove()
+    </script>
+
+</body>
+
+
+</html>

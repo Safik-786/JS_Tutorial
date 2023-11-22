@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day" id="thurs">thursday</div>
+        <div class="day">friday</div>
+        <div class="day">saturday</div>
+        <div class="day">sunday</div>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent')
+        // console.log(parent);
+        // console.log(parent.children)
+        // console.log(parent.children[1].innerText);
+        // console.log("\n");
+        // for (let i = 0;  parent.children.length; i++) {
+        //     console.log(parent.children[i].innerHTML);            
+        // }
+        
+        // parent.children[1].style.color="red"
+        // parent.children[1].style.border="2px solid cyan"
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+
+        const dayOne= document.querySelector("#thurs")       // it will select first one with class name day 
+        console.log(dayOne);
+        console.log("dayOne.parentElement=",dayOne.parentElement); // it will give parent div
+        console.log("dayOne.nextElementSibling=",dayOne.nextElementSibling); 
+        console.log("dayOne.previousElementSibling=",dayOne.previousElementSibling); 
+
+        // ======================== CHILD NODES ========================
+
+            // console.log("NODES : ", parent.childNodes);
+    </script>
+</body>
+</html>
