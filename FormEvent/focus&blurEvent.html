@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" onfocus="handleFocus(this)" onblur="handleBlur(this)" id="name"><br><br>
+        <label for="email">Name</label>
+        <input type="email" onfocus="handleFocus(this)" onblur="handleBlur(this)" id="email"><br><br>
+        <label for="country">Country</label>
+        <select name="" id="country" onfocus="handleFocus(this)" onblur="handleBlur(this)">
+            <option value="">India</option>
+            <option value="">pak</option>
+            <option value="">bangla</option>
+            <option value="">nepal</option>
+            <option value="">uae</option>
+            <option value="">usa</option>
+            <option value="">uk</option>
+            <option value="">qatar</option>
+        </select>
+    </form>
+
+    <script>
+        // WAY-1
+        // nameField= document.getElementById('name').addEventListener('focus',(e)=>{
+        //     e.target.style.background= "lime";
+        //     e.target.style.border= "1px solid blue";
+        // })
+        // nameField2= document.getElementById('name').addEventListener('blur',(e)=>{
+        //     e.target.style.background= "";
+        //     e.target.style.border= "1px solid blue";
+        // })
+
+        // WAY-2
+        handleFocus = (event) => {
+            event.style.background = 'lime'
+        }
+        // function handleFocus (element){
+        //     element.style.background='red'
+        // }
+
+
+        handleBlur = (event) => {
+            event.style.background = ''
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,13 +1,18 @@
 const promiseOne = new Promise((resolve, reject) => {
     setTimeout(function () {
-        // console.log("async task is complete");
-
-        resolve()  // this method is used to connect promiseOne.then method without this  below method cant execute
-    }, 1000)
+        console.log("async task is complete");
+        if (true) {
+            resolve()  // this method is used to connect promiseOne.then method without this  below method cant execute
+        }else {
+            reject("Something went wrong...")
+        }
+    }, 2000)
 })
 //  consume of promise
-promiseOne.then(function () {
-    // console.log("promise consumed");
+promiseOne.then(function (data) {
+    console.log("promise consumed");
+}).catch(function (error) {
+    console.log(error);
 })
 
 
@@ -49,18 +54,20 @@ const fourthPromise = new Promise(function (resolve, reject) {
         }
     }, 1000)
 })
+
+
 fourthPromise.then((user) => {
     console.log(user);
     return user.username        // it will return username's value
 })
     .then((username) => {                   // chaining concept use for handling
-        // console.log(username);
+        console.log(username);
     })
     .catch(function (error) {
         console.log(error);
     })
     .finally(() => {
-        // console.log("Finally the promise is either resolve or reject");         // this will always executed
+        console.log("Finally the promise is either resolve or reject");         // this will always executed
     })
 
 
@@ -111,10 +118,10 @@ getAllUsers()
 //  another way
 
 fetch('https://randomuser.me/api/')             // fetch url datas
-.then((response)=>{
-    return response.json()
-})
-.then((data)=>{
-    console.log(data);
-})
+    .then((response) => {
+        return response.json()
+    })
+    .then((data) => {
+        // console.log(data);
+    })
 

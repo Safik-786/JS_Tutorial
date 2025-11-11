@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">
+
+    </div>
+    
+
+    <script>
+        document.write('hello world')
+        const  h2= document.createElement('h2')
+        h2.innerHTML= 'Safik'
+        const body= document.getElementById('cont')
+        body.appendChild(h2)
+
+
+        // let func= (a, b)=>{
+        //     return a+b
+        // }
+        // console.log(func(2, 4))
+
+        let findMax= (arr) =>{
+            let max= 0
+            for (let index = 0; index < arr.length; index++) {
+                if (arr[index] > max) {
+                    max= arr[index]
+                }
+            }
+            return max
+            // or
+            return Math.max()
+        }
+        let arr= [2, 3, 4, 5, 6]
+        // console.log(findMax(arr))
+
+        let pallindrome= (str)=>{
+            return str === str.split('').reverse().join('')
+        }
+        // console.log(pallindrome("abc"))
+
+        function pallindrome2(n){
+            let num= n
+            let result;
+            while (n >0) {
+                let rem= n%10
+                result = result*10 +rem
+                n= n/10
+            }
+        }
+
+        function factorial(n){
+            if (n===0 || n==1){
+                return 1
+            }
+            return n* factorial(n-1)
+        }
+        // console.log(factorial(4))
+// -------------------------------------------------------------------------------------------
+
+        let myfunc2= ()=>{
+            let obj= {
+                name: "Safik",
+                roll: "23",
+                email: "ytsafik2@gmail.com"
+            }
+            return obj
+        }
+
+        obj= myfunc2()
+        // console.log(obj.name)
+        // console.log(obj.roll)
+        // console.log(obj.email)
+
+        // ------------------------------------------------------------------------------------
+
+        function characterCount(str){
+            let charcount= {}
+            for( let char of str){
+                if(charcount[char]){
+                    charcount[char]++
+                }else{
+                    charcount[char]= 1
+                }
+            }
+
+            for(let char in charcount){
+                // console.log( char,"occur", charcount[char], 'times')
+            }
+        }
+        // characterCount("safiiik")
+
+// ----------------------------------------------------------------------------------
+        
+
+    function reverseWord(sentence) {
+        let word = '';
+        let arr = [];
+
+        for (let char of sentence) {
+            if (char === " ") {
+                arr.push(word);
+                word = '';
+            } else {
+                word += char;
+            }
+        }
+        // Push the last word
+        arr.push(word);
+
+        // Reverse the array and join with spaces
+        let reversedSentence = arr.reverse().join(' ');
+        console.log(reversedSentence);
+    }
+
+// Example usage:
+// reverseWord("hello world");
+
+    let isPrime= (num)=>{
+
+        if(num < 1){
+            return true
+        }
+        for (let index = 2; (index * index )<= num; index++) {
+            if(num%index === 0){
+                return false
+            }
+            else{
+                return true
+            }
+        }
+    }
+    // console.log(isPrime(16))
+
+
+
+// remove duplicates
+
+
+// find max and secon max
+
+
+    a=23
+    b=30
+    c=a
+    a=b
+    b=c
+
+    // check number is integer or not
+    let n= 12.5
+    if(n % 1 ==0){
+    //     console.log("Integer")
+    // }else{
+    //     console.log("Not integer")
+    }
+
+
+    // -----------------------------------------check array or object--------------------------------------------
+    let arr2= [1, 2, 24, 5, 6]
+
+    
+
+
+    </script>
+</body>
+</html>

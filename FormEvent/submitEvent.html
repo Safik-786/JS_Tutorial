@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text{
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" onsubmit="handleSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br><br>
+
+        <label for="email" >Email:</label>
+        <input type="email" required oninvalid="alert('email is necessary')" id="email"><br><br>
+
+        <label for="pass">Pass:</label>
+        <input type="password" id="pass"><br><br>
+
+        <label >gender:</label>
+        <input type="radio" name="gender">male
+        <input type="radio" name="gender">female<br><br>
+
+        <input type="checkbox" >
+        <label for="country">Accept All terms and conditions</label> <br><br>
+
+        <select  id="country" >
+            <option value="India">India</option>
+            <option value="pakistan">pakistan</option>
+            <option value="bangla">bangla</option>
+            <option value="nepal">nepal</option>
+            <option value="uae">uae</option>
+            <option value="qatar">qatar</option>
+        </select> <br><br>
+
+        <label for="textarea" class="text">textArea:</label>
+        <textarea name="" id="textarea" cols="30" rows="10"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script>
+        function handleSubmit(e){
+            var name = document.getElementById('name').value
+            var email = document.getElementById('email').value
+            var pass = document.getElementById('pass').value
+            alert('name: '+ name + '\nemail:'+ email+ '\npassword:'+ pass)
+        }
+
+    </script>
+</body>
+
+</html>

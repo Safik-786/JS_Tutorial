@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="getStep()">Click</button>
+
+    <script>
+        function* steps(){
+    let a=20;
+    let b=10;
+    console.warn(a+b)
+    yield 'step1 completed'
+    console.warn(a-b)
+    yield 'step2 completed'
+    console.warn(a*b)
+    yield 'step3 completed'
+    console.warn(a/b)
+    yield 'step4 completed'
+
+}
+    let step= steps()
+
+    function getStep(){
+        console.warn(step.next())
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="handleClick()">Click</button>
+
+
+    <script>
+
+        // let event = new CustomEvent('myCustomEvent', { detail: { message: 'Hello, world!' } });
+
+        // document.addEventListener('myCustomEvent', function(e) {
+        // console.log(e.detail.message); // 'Hello, world!'
+        // });
+
+        // document.dispatchEvent(event);
+
+
+        // -----------------------Event Using function-----------------------------------------
+        let myfunc= ()=>{
+            console.log("Hello Safik")
+            return "Bye Safik"
+        }
+
+        let event2= new CustomEvent('safik', {detail: myfunc})
+
+        
+        document.addEventListener('safik', (e)=>{
+            console.log(e.detail())
+        })
+
+        let handleClick= ()=>{
+            document.dispatchEvent(event2);
+        }
+
+
+    </script>
+</body>
+</html>

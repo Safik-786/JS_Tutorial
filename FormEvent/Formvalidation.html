@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; box-shadow: 2px 2px 10px 10px rgb(147, 146, 146); width: 400px; margin: auto; padding: 20px 0;">
+        <form name="myForm" onsubmit="return validateForm(event)" method="post">
+            <h2>Registration Form</h2>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="fname" required>
+                <span id="nameError" style="color:red;"></span>
+            </div><br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="femail" required>
+                <span id="emailError" style="color:red;"></span>
+            </div><br>
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="fphone" required>
+                <span id="phoneError" style="color:red;"></span>
+            </div><br>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="fpass" required>
+                <span id="passwordError" style="color:red;"></span>
+            </div><br>
+            <div>
+                <label for="cpassword">Confirm Password:</label>
+                <input type="password" id="cpassword" name="fcpass" required>
+                <span id="confirmPasswordError" style="color:red;"></span>
+            </div><br>
+            <div style="display: flex; justify-content: space-evenly;">
+                <input type="submit" value="Submit">
+                <button onclick="clearForm()">Clear</button>
+            </div><br>
+ 
+        </form>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            // Prevent form submission
+            event.preventDefault();
+            console.log(document.forms['myForm']['fname'].value)
+
+            // Get form elements
+            let array = [];
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("cpassword").value;
+
+            // Clear error messages
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("phoneError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+            document.getElementById("confirmPasswordError").innerHTML = "";
+
+            // Validation flag
+            var valid = true;
+
+            // Name validation
+            if (name.length < 3) {
+                document.getElementById("nameError").innerHTML = "Name must be at least 3 characters long.";
+                valid = false;
+            }
+
+            // Email validation using regex
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById("emailError").innerHTML = "Please enter a valid email address.";
+                valid = false;
+            }
+
+            // Phone validation (example: checking for 10 digit number)
+            var phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById("phoneError").innerHTML = "Phone number must be 10 digits long.";
+                valid = false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters long.";
+                valid = false;
+            }
+
+            // Confirm Password validation
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match.";
+                valid = false;
+            }
+
+            // If valid, store data in a variable and push to the array
+            if (valid) {
+                let obj = {
+                    name,
+                    email,
+                    phone,
+                    password,
+                    confirmPassword
+                };
+                array.push(obj);
+                console.log(array);
+            }
+            
+
+            // Return the validation result
+            return valid;
+        }
+        function clearForm(){
+                name.value= ""
+                email.value= ""
+                phone.value= ""
+                password.value= ""
+                confirmPassword.value= ""
+        }
+    </script>
+</body>
+
+</html>

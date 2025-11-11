@@ -17,7 +17,7 @@
         console.log(a);
         let p ={
             run :()=>{
-                alert('runnn.........');
+                console.log('runnn.........');
             }
         }
         //    setting of prototype object p with the object ref a
@@ -35,6 +35,22 @@
         /*      1st check in 'a' object , then check in prototype of  , then check in prototype of p
                 
         */
+
+
+        // Example 2
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        // Adding a method to the prototype
+        Person.prototype.greet = function() {
+            console.log('Hello, ' + this.name);
+        };
+
+        const person1 = new Person('Alice');
+        person1.greet(); // Outputs: Hello, Alice
+
 
 
     </script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form Validation</title>
+</head>
+<body>
+    <header>Hello i am  Safik</header>
+    <footer>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad consequatur corporis beatae fuga error quibusdam quisquam recusandae temporibus. Fugit eaque delectus, numquam ut quo optio adipisci ipsum ullam blanditiis cumque iste ipsam atque modi.
+    </footer>
+    <article>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, eius, beatae asperiores incidunt quidem molestiae nobis tempora iste fugit reprehenderit, hic aut illo laudantium enim aperiam? Aspernatur, excepturi ab quisquam in sit praesentium reiciendis magni mollitia, itaque adipisci inventore suscipit necessitatibus commodi doloremque enim quas. Odio suscipit distinctio ullam, aperiam sunt, nesciunt optio possimus temporibus repudiandae iusto eveniet quod ut sapiente. Id, non unde porro minima molestias quae tenetur laudantium, perspiciatis consectetur dolore, ab mollitia ad praesentium dolorem!
+    </article>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required minlength="3"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" step="5" max="100" required><br><br>
+        
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website"><br><br>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" min="2023-01-01" max="2024-12-31"><br><br>
+        
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" placeholder="Search..."><br><br>
+        
+        <label for="browser">Choose your browser:</label>
+        <input list="browsers" id="browser" name="browser">
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+            <option value="Opera">
+        </datalist><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
+

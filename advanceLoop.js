@@ -69,11 +69,11 @@ const books = [
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
 ];
 
-let user = books.filter((bk)=>(bk.genre === "Fiction"))
+let user = books.filter((bk)=>(bk.genre == "History"))
 
-user = books.filter((bk)=>{                                                // here user variable is getting updated
-    return  ( bk.publish >=1990 && bk.genre ==="History")
-})
+// user = books.filter((bk)=>{                                                // here user variable is getting updated
+//     return  ( bk.publish >=1990 && bk.genre ==="History")
+// })
 
 
 console.log(user);

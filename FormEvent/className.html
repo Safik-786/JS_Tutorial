@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .red{
+            background-color:red;
+        }
+        .text-blue{
+            color:blue
+        }
+        .black{
+            background-color:yellowgreen;
+            color: aqua;
+        }
+        .blue{
+            color:blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="first" class='red text-blue'>Hii myself Safik</div>
+    <button onclick="handleClick()">Click Me</button>
+
+<script>
+    let first= document.getElementById('first')
+    first.className='black'
+    first.className='black text-blue paint border'
+    first.classList.remove('text-blue')
+    first.classList.add('text-blue')
+
+/*
+instead of add and remove we use toggle method-> hai to lagadega or nahi hai to hata dega
+*/
+
+first.classList.toggle('text-blue')
+// first.classList.toggle('text-blue')
+// first.classList.toggle('text-blue')
+// first.classList.toggle('text-blue')
+const handleClick= ()=>{
+    first.classList.toggle('black')
+
+}
+console.log(first.classList.contains('text-blue'))
+</script>
+</body>
+</html>

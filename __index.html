@@ -1,19 +1,96 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .box{
-            text-align: center;
-            line-height: 400px;
-        }
-    </style>
 </head>
+
 <body>
-    <div class="box">
-        <h2>fuck you</h2>
-    </div>
+    <form name="myForm" onsubmit="hanldeSubmit(event)">
+        Name: <input type="text" name="name"><br><br>
+        email: <input type="mail" name="email"><br><br>
+        Password: <input type="text" name="pass"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="name"></div>
+    <div id="email"></div>
+    <div id="pass"></div>
+
+
+    <script>
+
+        let hanldeSubmit = (event) => {
+            event.preventDefault()
+            let form = document.forms['myForm']
+            let name = form['name'].value
+            let email = form['email'].value
+            let pass = form['pass'].value
+
+            let formData = {
+                name,
+                email,
+                pass
+            }
+
+            console.log(formData)
+            // console.log(document.forms['myForm']['fname'].value)
+
+            document.getElementById("name").innerHTML =
+                `
+        <p><strong>Name:</strong> ${formData.name}</p>
+        <p><strong>Email:</strong> ${formData.email}</p>
+        <p><strong>Password:</strong> ${formData.pass}</p>
+      `;
+
+
+        }
+    </script>
 </body>
+
+</html>
+
+
+
+ -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let response = fetch('https://jsonplaceholder.typicode.com/posts')
+        console.log("response= ", response)
+
+        response.then((resp)=>{
+            if (resp.ok || resp.status === 200) {
+                return resp.json()
+            }
+            throw new Error("Error in api call")
+        })
+        .then((data)=>{
+            console.log(data)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+
+
+    </script>
+</body>
+
 </html>

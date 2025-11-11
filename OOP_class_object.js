@@ -12,11 +12,14 @@ class RailwayForm{
     }
 }
 // Creating Object
-let rahul = new RailwayForm()
-rahul.fill("rahul",7676786)
-rahul.submit()
-rahul.cancel()
-let safik = new RailwayForm()
-safik.fill('safik',6564420)
-safik.submit()
-safik.cancel()
+// let rahul = new RailwayForm()
+// rahul.fill("rahul",7676786)
+// rahul.submit()
+// rahul.cancel()
+// let safik = new RailwayForm()
+// safik.fill('safik',6564420)
+// safik.submit()
+// safik.cancel()
+
+let rahul=  new RailwayForm()
+rahul.fill("rahul", 'kjkcxdsfgh')

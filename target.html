@@ -38,13 +38,14 @@
         btn.addEventListener('click', function (event) {
             // console.log(event.target.className);
             // console.log(event.target.id);
-            console.log(event.target);   //tagName === nodeName
-            console.log(event.currentTarget);
+            console.log("btn-target",event.target);   //tagName === nodeName
+            console.log("btn-currentTarget",event.currentTarget);
         })
-
+        
         div.addEventListener('click' , function (event) {
-            // console.log("div is clicked");
-            // console.log(event.target.tagName);
+            console.log("div is clicked");
+            console.log("div-target:",event.target);
+            console.log("div-current target",event.currentTarget);
         })
     </script>
 

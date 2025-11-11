@@ -28,3 +28,4 @@ const arr3 = [1,2,3,[4,5,6],7,[6,7,[4,5]]]
 console.log(arr3);
 const newArr=arr3.flat(2);      // we can use infinity
 console.log(newArr);
+

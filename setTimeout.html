@@ -8,29 +8,45 @@
 <body>
     <h2>chai or code</h2>
     <button id="btn"> click me</button>
+    <button onclick="clearTime()">clear Time out</button>
     <script>
+
+        console.log("Welcome")
         setTimeout (function(){         //way 1
             console.log("safix");
         } ,2000)
+        console.log("Bye")
 
 
-        const say = function(){
-            console.log("Rahul");
-        }
+        // const say = function(){
+        //     console.log("Rahul");
+        // }
         // setTimeout(say,2000);
 
-        const changeText= function(){
-            document.querySelector('h2').innerHTML = "Best js Series"
-        }
-        // setTimeout(changeText,2000)
-        const changeTime=setTimeout(changeText,2000)
-        document.querySelector('#btn').addEventListener('click',function() {
-            // alert("hii ! welcome")
-            clearTimeout(changeTime)
-            console.log("stopped");
-        })
-        let timerid= setTimeout(()=>alert("never"),1000)
-        clearTimeout(timerid)
+        // const changeText= function(){
+        //     document.querySelector('h2').innerHTML = "Best js Series"
+        //     console.log("Best Js Series")
+        // }
+        // let timerid = setTimeout(changeText,4000)
+
+        // let abc= setInterval(()=>{
+        //     console.log("Hello....")
+        // }, 1000)
+
+        // function clearTime(){
+        //     console.log("Clear btn clicked..")
+        //     clearTimeout(timerid)
+        //     clearInterval(abc)
+        // }
+
+        // const changeTime=setTimeout(changeText,2000)
+        // document.querySelector('#btn').addEventListener('click',function() {
+        //     // alert("hii ! welcome")
+        //     clearTimeout(changeTime)
+        //     console.log("stopped");
+        // })
+        // let timerid= setTimeout(()=>alert("never"),1000)
+        // clearTimeout(timerid)
 
     </script>
 </body>

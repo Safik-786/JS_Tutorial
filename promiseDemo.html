@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let promise1= new Promise((resolve, reject)=>{
+            // setTimeout(resolve, 1000, 'one')
+            resolve('one')
+        })
+        promise1.then((values)=>{
+            console.log(values)
+        })
+        let promise2= new Promise((resolve, reject)=>{
+            // setTimeout(resolve, 1000, 'two')
+            resolve('Two')
+        })
+        promise2.then((values)=>{
+            console.log(values)
+        })
+        let promise3= new Promise((resolve, reject)=>{
+            // setTimeout(resolve, 1000, 'three')
+            resolve('Three')
+        })
+        promise3.then((values)=>{
+            console.log(values)
+        })
+    </script>
+</body>
+</html>

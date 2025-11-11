@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person= {
+            name:'john',
+            getName:function(){
+                return this.name
+            },
+            getRoll:function(){
+                return rollNo;
+            }
+        }
+        const student={
+            rollNo:20,
+            __proto__:person
+        }
+        console.log(student)
+        console.log(student.rollNo)
+
+        const primaryStudent={
+            rollNo:30,
+            __proto__:student
+        }
+        console.log(primaryStudent.rollNo)
+
+
+        const arr = ["safik ", 2]
+        console.log(arr)
+
+        // how to see all the builtin function avail in prototype
+
+        const obj = new Object()
+        const array = new Array()
+        const func = new function(){};
+
+        console.log(obj.__proto__)
+        console.log(arr.__proto__)
+        console.log(func.__proto__)
+
+
+        // how to add function to prototype
+
+        Array.prototype.show=function(){
+            console.log(this)
+        }
+        const cities= ['delhi','bhubaneswar']
+        cities.show();
+        
+
+    </script>
+</body>
+</html>

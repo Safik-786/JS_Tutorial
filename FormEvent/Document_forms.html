@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.forms</title>
+</head>
+<body>
+    <form name="myForm-1" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email"><br><br>
+        <label for="Number">Password:</label>
+        <input type="password" name="pass" id="Number"><br><br>
+        <label for="address">Address:</label>
+        <textarea type="text" name="address" id="address"> </textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    <script>
+        function handleSubmit(event){
+            event.preventDefault()
+            console.log(document.getElementById('name').value)
+            // let name= document.forms["myForm-1"]['name'].value;
+            // console.log(name)
+            console.log(document.forms["myForm-1"]["name"])
+            console.log(document.forms["myForm-1"])
+        }
+    </script>
+</body>
+</html>

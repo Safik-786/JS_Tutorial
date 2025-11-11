@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .cont{
+            height: 200px;
+            border: 1px solid salmon;
+            
+        }.child{
+            border: 1px dotted greenyellow;
+            margin: 10px;
+        }
+        ul{
+            display: flex;
+            justify-content: left;
+        }li{
+            list-style-type: none;
+            margin: 10px 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="child">
+            
+        </div>
+    </div>
+    <ul>
+        <li class="nav-item">Home</li>
+        <li class="nav-item">Contact</li>
+        <li class="nav-item">Message</li>
+        <li class="nav-item">Notification</li>
+        <li class="nav-item">Setting</li>
+    </ul>
+    <script>
+        a= document.getElementsByClassName('child')[0]
+        a.innerHTML= `<h2 style="text-align: center;">Safik <span style="color: red;">Mahammad</span></h2>`
+
+        list= document.getElementsByClassName('nav-item')
+        console.log(list)
+        list.map(item=>{
+            console.log(item.innerHTML)
+        })
+        // list_arr= Array.from(list)
+        // console.log(list_arr)
+        // console.log(typeof(list_arr))
+        // list_arr.map((item)=>{
+        //     console.log(item.innerText)
+        //     return item.innerText
+        // })
+    </script>
+</body>
+</html>
