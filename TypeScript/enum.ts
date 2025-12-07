@@ -1,7 +1,14 @@
+
+
+
+
 enum Direction{
     east=501,
     west,
     north=5010,
-    south
+    south   
 }
 console.log(Direction.west);
+
+
+
