@@ -16,17 +16,32 @@
         <label for="address">Address:</label>
         <textarea type="text" name="address" id="address"> </textarea><br><br>
         <input type="submit" value="Submit">
+
+
+        <div onclick="myfun()">
+
+        </div>
     </form>
 
     
     <script>
         function handleSubmit(event){
-            event.preventDefault()
-            console.log(document.getElementById('name').value)
+            // event.preventDefault()
+            // console.log(document.getElementById('name').value)
             // let name= document.forms["myForm-1"]['name'].value;
             // console.log(name)
-            console.log(document.forms["myForm-1"]["name"])
-            console.log(document.forms["myForm-1"])
+
+            console.log(document.forms)
+            console.log(`document.forms["myForm-1"]`, document.forms["myForm-1"])
+            console.log(document.forms["myForm-1"]["name"].value)
+
+            const name= document.forms["myForm-1"]["name"].value
+            const email= document.forms["myForm-1"]["email"].value
+            const password= document.forms["myForm-1"]["pass"].value
+
+            const data= {
+                name, email, password
+            }
         }
     </script>
 </body>

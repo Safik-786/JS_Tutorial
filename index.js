@@ -8,9 +8,6 @@ function  outer(){
     return inner
 }
 
-
-
-
 const ansFunc= outer()
 
 
