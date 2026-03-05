@@ -21,7 +21,6 @@ class CustomPromise {
                         return
                     })
             })
-
         })
     }
 }

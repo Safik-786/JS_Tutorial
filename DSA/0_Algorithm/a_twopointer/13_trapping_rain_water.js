@@ -15,7 +15,7 @@ function trapping_rain_water_bruteforce(arr) {
 
 
 function trapping_rain_water_prefix_array(arr) {
-  // Fint the array which gives the leftmax(current index value depends on the previous and current)
+  // Find the array which gives the leftmax(current index value depends on the previous and current)
   let leftMaxArr = []
   leftMaxArr[0] = arr[0]
   for (let i = 1; i < arr.length; i++) {
@@ -42,9 +42,19 @@ function trapping_rain_water_prefix_array(arr) {
   console.log(totalWater);
 }
 let arr = [4, 2, 3, 4, 5, 6, 7]
-trapping_rain_water_prefix_array(arr)
+// trapping_rain_water_prefix_array(arr)
 
 
+
+// What it optimizes
+// Eliminates the need for leftMaxArr and rightMaxArr
+// Computes water on the fly
+// Maintains only:
+// leftMax
+// rightMax
+// Complexity
+// Time: O(n)
+// Space: O(1) → constant space
 
 function trapping_rain_water_2_pointer(arr) {
   let left = 0
@@ -67,4 +77,7 @@ function trapping_rain_water_2_pointer(arr) {
   return ans
 }
 
+
+const ans= trapping_rain_water_2_pointer([1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
+console.log(ans)
 

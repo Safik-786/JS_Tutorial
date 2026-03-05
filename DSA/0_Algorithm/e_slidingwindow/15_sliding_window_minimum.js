@@ -13,4 +13,3 @@ function solution() {
   // sliding window logic for sliding_window_minimum
   return true;
 }
-module.exports = solution;

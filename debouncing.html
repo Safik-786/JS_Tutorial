@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="">Search</label>
+    <input type="text" oninput="searchEvent()">
+
+
+    <script>
+        let debounce = (search, delay) => {
+            let timer;
+            return () => {
+                clearTimeout(timer)
+                timer = setTimeout(() => {
+                    search()
+                }, delay)
+            }
+        }
+        let search = () => {
+            console.log("Api calls")
+        }
+        let searchEvent = debounce(search, 500)
+    </script>
+</body>
+
+</html>

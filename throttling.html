@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const throttle = (fn, delay) => {
+            let lastCall = 0;
+            return function () {
+                const now = Date.now();
+
+                if (now - lastCall >= delay) {
+                    lastCall = now;
+                    fn();
+                }
+            };
+        };
+        const apiCall = () => {
+            console.log("API call");
+        };
+        const throttledEvent = throttle(apiCall, 1000);
+
+    </script>
+</body>
+
+</html>

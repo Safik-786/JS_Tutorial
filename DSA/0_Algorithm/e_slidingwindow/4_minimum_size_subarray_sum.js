@@ -14,3 +14,21 @@ function solution() {
   return true;
 }
 module.exports = solution;
+
+
+
+
+let s= "lkjhgfdsa"
+
+
+arr= s.split("")
+
+console.log(arr)
+
+console.log(arr.sort())
+
+// console.log(arr)
+
+console.log("arr= ", arr)
+
+

@@ -121,7 +121,7 @@ function removeDuplicates2Pointer(nums) {
     }
   }
 
-  return [slow + 1, nums.slice(0, slow)];
+  return nums.slice(0, slow+1);
 }
 
 
@@ -129,6 +129,9 @@ removeAllDuplicates(input)
 
 removeAllDuplicatesOptimized(input)
 
+
+console.log(removeDuplicates2Pointer(input)
+)
 
 
 

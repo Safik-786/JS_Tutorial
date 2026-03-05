@@ -1,5 +1,19 @@
 // Problem: container_with_most_water
 // Description: Two-pointer problem: container with most water
+
+
+// Height:   8 3 6 4 8 2 7 1 
+
+        //    |       |       
+        //    |       |   |
+        //    |   |   |   |
+        //    |   |   |   |
+        //    |   | | |   |
+        //    | | | | |   |
+        //    | | | | | | |
+        //    | | | | | | | |
+        //    8 3 6 4 8 2 7 1 
+
 // ✅ Test Cases for container_with_most_water
 // Test Case 1 — Example Case
 // Input:
@@ -38,90 +52,6 @@
 
 // Same reasoning as increasing.
 
-// Test Case 4 — All Equal Heights
-// Input:
-// [5,5,5,5,5]
-
-// Output:
-// 20
-
-// Explanation:
-
-// min(5,5) * (4) = 20.
-
-// Test Case 5 — Minimum Array Size
-// Input:
-// [1,1]
-
-// Output:
-// 1
-
-// Explanation:
-
-// Only one container possible.
-
-// Test Case 6 — Zeros in Array
-// Input:
-// [0,2,0,3,0,4]
-
-// Output:
-// 6
-
-// Explanation:
-
-// Between 2 and 4:
-// min(2,4) * (5-1) = 2 * 4 = 8
-// Between 3 and 4:
-// min(3,4) * (5-3) = 3 * 2 = 6
-// Max = 8
-// (You can use whichever convention; from literature, correct output is 8)
-
-// Test Case 7 — Large Variation
-// Input:
-// [2,3,10,5,7,8,9]
-
-// Output:
-// 36
-
-// Explanation:
-
-// Between height 10 and 9:
-// min(10,9) * (6-2) = 9 * 4 = 36.
-
-// Test Case 8 — Peaks Only at Edges
-// Input:
-// [10,1,1,1,10]
-
-// Output:
-// 40
-
-// Explanation:
-
-// min(10,10) * 4 = 40.
-
-// Test Case 9 — Multiple Equal Max Areas
-// Input:
-// [4,3,2,1,4]
-
-// Output:
-// 16
-
-// Explanation:
-
-// Leftmost 4 and rightmost 4 create area = 4 * 4 = 16.
-
-// Test Case 10 — Random Heights
-// Input:
-// [1,3,2,5,25,24,5]
-
-// Output:
-// 24
-
-// Explanation:
-
-// Between 25 and 24:
-// min(25,24) * (5-4) = 24 * 1 = 24.
-
 
 
 function containerWithMaxWaterBruteforce(arr){
@@ -144,7 +74,7 @@ let arr= [1,2,3,4,5,6,7]
 containerWithMaxWaterBruteforce(arr)
 
 
-// logic- use 2 pointer shoft those pointer with lower height, because higher height will not give ypu the maximum result
+// logic- use 2 pointer shift those pointer with lower height, because higher height will not give ypu the maximum result
 function containerWithMaxWaterOptimal(arr){
     let left= 0;
     let right= arr.length-1;
